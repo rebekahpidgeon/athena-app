@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend athena app",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebekahpidgeon/athena-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rebekahpidgeon/athena-app/issues"
+  },
+  "homepage": "https://github.com/rebekahpidgeon/athena-app#readme",
+  "dependencies": {
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.1",
+    "moongoose": "^0.0.5"
+  }
+}
