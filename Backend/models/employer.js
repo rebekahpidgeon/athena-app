@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 //creatung schema for cart
-const employerScema = new mongoose.Schema({
+const employerSchema = new mongoose.Schema({
     employerName: {
         type: String,
         required: true,
@@ -15,4 +15,4 @@ const employerScema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Employer', employerScema);
+module.exports = mongoose.model('Employer', employerSchema);
