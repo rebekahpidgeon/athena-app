@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { ForYouPage } from './pages';
+import ForYouPage from './ForYouPage';
 
 function App() {
   return (
