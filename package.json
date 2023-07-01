@@ -1,0 +1,23 @@
+{
+  "name": "athena-app",
+  "version": "1.0.0",
+  "description": "Athena app for hackathon",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebekahpidgeon/athena-app.git"
+  },
+  "author": "Rebekah, Lizzie, Isa, Semhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rebekahpidgeon/athena-app/issues"
+  },
+  "homepage": "https://github.com/rebekahpidgeon/athena-app#readme",
+  "devDependencies": {
+    "electron": "^25.2.0"
+  }
+}
