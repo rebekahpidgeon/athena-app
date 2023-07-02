@@ -1,7 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 var fs = require('fs');
-
 console.log('Script');
 
 async function fetchHTML(url) { // Get the HTML of GeekForGeeks using axios

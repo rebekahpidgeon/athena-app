@@ -10,4 +10,4 @@ const tagSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Employer', tagSchema);
+module.exports = mongoose.model('Tag', tagSchema);

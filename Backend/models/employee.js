@@ -20,4 +20,4 @@ const employeeSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Employer', employeeSchema);
+module.exports = mongoose.model('Employee', employeeSchema);
