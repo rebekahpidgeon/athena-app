@@ -19,9 +19,9 @@ export default function MediaCard(){
                 
                     <div className="col-9">
                         <h6 className="card-title">
-                        Podcast
+                        All you need to know about Machine Learning
                         </h6>
-                        <p className="card-text">Podcast explanation goes here</p>
+                        <p className="card-text">How disruptive is Machine Learning, in this episode, we look at what the new changes mean</p>
                 </div>
 
             </div>

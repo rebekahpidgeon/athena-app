@@ -8,9 +8,10 @@ export default function ForYouPage(){
     return (
         <div className="container-fluid">
         <header className="header-banner">
-                <h1 className="header-text">Updates</h1>
+                <h1 className="header-text"><span className="highlighted-text">Machine Learning</span> applications, along</h1>
             </header>
             <br/>
+
         <ArticleCard/>
         <br/>
         <MediaCard/>    

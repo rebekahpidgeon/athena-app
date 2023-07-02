@@ -1,13 +1,21 @@
 import React, { useState, useLayoutEffect } from "react";
 import axios from 'axios';
+import pausebutton from './pausebutton.svg'
+import sound1 from './sound1.svg'
+import sound2 from './sound2.svg'
+import sound3 from './sound3.svg'
+import sound4 from './sound4.svg'
+import sound5 from './sound5.svg'
+import articlelogo from './article-logo.png'
 const cheerio = require('cheerio');
 const topics = require("./geeks.json");
+
 
 export default function ArticleCard(){
 
     const [aName, setAName] = useState([]);
     // Hard coded desc for now. Would be fetched from most important/interesting part of the website
-    const [aDesc, setADesc] = useState('Python is a high-level, general-purpose, and very popular programming language. Python programming language (latest Python 3) is being used in web development, Machine Learning applications, along with all cutting-edge technology in Software Industry.');
+    const [aDesc, setADesc] = useState('Machine Learning applications, along with all cutting-edge technology in Software Industry.');
     const [webLink, setWebLink] = useState([]);
 
     const handleAName = async()=> { // Handle getting the topic of the article card
@@ -33,6 +41,7 @@ export default function ArticleCard(){
             <div className="card card-background">
             <div className="card-body row">
                     <div className="col-3">
+                    <img className="" src={articlelogo} width={60} height={60}/>
                     </div>
                 
                     <div className="col-9">
@@ -40,9 +49,18 @@ export default function ArticleCard(){
                         {aName}
                         </h6>
                         <p className="card-text">{aDesc}</p>
-                        <p className="card-link"><a href = {webLink}>What is Python?</a></p>
+                        <p className="card-link"><a href = {webLink}>Read more ... </a></p>
                 </div>
 
+            </div>
+            <div className="sound-wave">
+                <img className="" src={sound1} width={40} height={40}/>
+                <img className="" src={sound2} width={40} height={40}/>
+                <img className="" src={sound3} width={40} height={40}/>
+                <img className="" src={sound4} width={40} height={40}/>
+                <img className="" src={sound5} width={40} height={40}/>
+                
+                <img className="pause-button col-3" src={pausebutton} width={40} height={40}/>
             </div>
             
         </div>
