@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-const url = 'mongodb+srv://lizziebosson1:londonpanda@cluster0.1tyew8n.mongodb.net/?retryWrites=true&w=majority';
+const url = 'mongodb+srv://lizziebosson1:londonpanda@cluster0.1tyew8n.mongodb.net/Athena?retryWrites=true&w=majority';
 const express = require('express');
 const cors = require('cors');
 const employees = require("./Routes/employees");

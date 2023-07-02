@@ -10,6 +10,7 @@ var Tag = require("../models/tag.js").model('Tag');
 router.get('/getAll', function(req, res, next) {
     tag.find(function (err, tags) {
       if (err) return next(err);
+      console.log(tags);
       res.json(tags);
     });
    });

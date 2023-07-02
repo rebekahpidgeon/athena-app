@@ -1,57 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import axios from 'axios';
 const cheerio = require('cheerio');
 const topics = require("./geeks.json");
 
 export default function ArticleCard(){
 
-    const [aName, setAName] = useState('');
-    const [aDesc, setADesc] = useState('');
-    const [tag, setTag] = useState('');
-    const [webLink, setWebLink] = useState('');
+    const [aName, setAName] = useState([]);
+    // Hard coded desc for now. Would be fetched from most important/interesting part of the website
+    const [aDesc, setADesc] = useState('Python is a high-level, general-purpose, and very popular programming language. Python programming language (latest Python 3) is being used in web development, Machine Learning applications, along with all cutting-edge technology in Software Industry.');
+    const [webLink, setWebLink] = useState([]);
 
-    const handleJSON= (event) => {
-        setTag('Python')
-        setWebLink(topics[tag]);
-        setAName('Python')
+    const handleAName = async()=> { // Handle getting the topic of the article card
+        try{
+            const tag = 'Python'; // Hard coded tag. In the future the tag ID would be passed in once the data is fetched from the user's tags
+            const response = await fetch(`http://localhost:8000/tag/getTagName/${tag}`); // would use tag id in the future
+            const data = await response.json();
+            setAName(data[0].tagName); // Set the article name to the tag name fetched from the database
+            setWebLink(topics[data[0].tagName]); // Get the corresponding websites linked to that tag. Would be an array or dictionary of websites in the future
+        }
+        catch(error) {
+            console.error(error);
+        }
     }
-
-    useEffect(() => {
-        handleJSON();
-    });
-
-    // const handleAName = (event) => {
-    //     axios.get(`http://localhost:8000/tag/getTagName/${tagName}`)
-    //     .then((response) => {
-    //         console.log(tag.tagName);
-    //         setTag(tag.tagName);
-    //         setAName(tag.tagName);
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-    //     })
-    //     .finally(() => {
-    //         console.log(topics);
-    //         setWebLink(console[tag]);
-    //         axios.get(webLink)
-    //         .then((response) => {
-    //             const parser = cheerio.load(response.data);
-    //             const headers = parser('h2');
-    //             headers.each((index, header) => {
-    //                 if(parser(header).text() == "What is Python?"){
-    //                     setADesc(parser(header).text());
-    //                 }
-    //             })
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    //     });
-    // }
-
-    // useEffect(() => {
-    //     handleAName();
-    // });
+  
+    useLayoutEffect(() => { 
+        handleAName(); // Before page loads run the function to get article data
+    }, []);
 
     return (
         <div >
